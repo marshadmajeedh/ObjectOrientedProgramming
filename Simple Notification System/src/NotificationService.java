@@ -7,5 +7,6 @@ public class NotificationService {
 
     public void sendNotification(Recipient recipient, Message message) {
         notification.send(recipient, message);
+        System.out.println("Notification sent successfully "+notification.getClass().getSimpleName());
     }
 }

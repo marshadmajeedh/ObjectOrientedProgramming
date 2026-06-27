@@ -1,6 +1,11 @@
-public class PushNotification implements Notification{
+public class PushNotification extends BaseNotification{
     @Override
-    public void send(Recipient recipient, Message message) {
-        System.out.println("Sending push notification to "+recipient.getDeviceToken()+"\n"+message.toString());
+    protected String getType() {
+        return "Push Notification";
+    }
+
+    @Override
+    protected String getContactInfo(Recipient recipient) {
+        return recipient.getDeviceToken();
     }
 }

@@ -1,6 +1,11 @@
-public class EmailNotification implements Notification {
+public class EmailNotification extends BaseNotification{
     @Override
-    public void send(Recipient recipient, Message message) {
-        System.out.println("Sending email to " + recipient.getEmail()+"\n"+message.toString());
+    protected String getType() {
+        return "E-Mail";
+    }
+
+    @Override
+    protected String getContactInfo(Recipient recipient) {
+        return recipient.getEmail();
     }
 }

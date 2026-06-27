@@ -1,6 +1,11 @@
-public class SMSNotification implements Notification {
+public class SMSNotification extends BaseNotification {
     @Override
-    public void send(Recipient recipient, Message message) {
-        System.out.println("Sending sms to " + recipient.getPhone()+"\n"+message.toString());
+    protected String getContactInfo(Recipient recipient) {
+        return recipient.getPhone();
+    }
+
+    @Override
+    protected String getType() {
+        return "SMS";
     }
 }

@@ -1,11 +1,11 @@
 public class Recipient {
-    private String email;
-    private String phone;
-    private String deviceToken;
+    private final String email;
+    private final String phone;
+    private final String deviceToken;
     public Recipient(String email, String phone, String deviceToken) {
-        setEmail(email);
-        setPhone(phone);
-        setDeviceToken(deviceToken);
+        this.email = email;
+        this.phone = phone;
+        this.deviceToken = deviceToken;
     }
 
     public String getEmail() {
@@ -16,16 +16,6 @@ public class Recipient {
         return phone;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-    public void setDeviceToken(String deviceToken) {
-        this.deviceToken = deviceToken;
-    }
     public String getDeviceToken() {
         return deviceToken;
     }
